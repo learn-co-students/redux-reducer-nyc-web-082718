@@ -1,9 +1,7 @@
 export function manageFriends(
   state = {
     friends: []
-  },
-  action
-) {
+  }, action) {
   switch (action.type) {
     case "ADD_FRIEND":
       return {friends: [...state.friends, action.friend]};
@@ -13,10 +11,7 @@ export function manageFriends(
       );
 
       return {
-        friends: [
-          ...state.friends.slice(0, indexOfaction),
-          ...state.friends.slice(indexOfaction + 1)
-        ]
+        friends: indexOfaction
       };
     default:
       return state;
